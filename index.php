@@ -1,3 +1,15 @@
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Простая валидация телефона
+    $phone = $_POST['phone'];
+    if (!preg_match("/^[0-9+\-\s()]+$/", $phone)) {
+        echo '<div style="background:#f8d7da; padding:1.5rem; border-radius:8px; margin-bottom:2rem; text-align:center;color:#721c24;">
+              Ошибка: некорректный формат телефона!</div>';
+    } else {
+        // существующий код вывода успеха
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="ru">
 <head>
